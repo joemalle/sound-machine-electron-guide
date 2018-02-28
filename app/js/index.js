@@ -19,9 +19,9 @@ function prepareButton(buttonEl, soundName) {
     });
 }
 
-var ipc = require('ipc');
+const { ipcRenderer } = require('electron');
 
 var closeEl = document.querySelector('.close');
 closeEl.addEventListener('click', function () {
-    ipc.send('close-main-window');
+    ipcRenderer.send('close-main-window');
 });
